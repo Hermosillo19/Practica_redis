@@ -12,7 +12,7 @@ def validar_id_usuario(id_usuario:str) -> None:
 def construir_clave_usuario(id_usuario:str) -> str:
      return f"{PrefijoUsuario} + {id_usuario}"
 
-def normalizar_is_usuario(datos: Dict[str,Any]) -> str:
+def normalizar_id_usuario(datos: Dict[str,Any]) -> str:
      
     id_usuario = datos.get("id_usuario", datos.get("id"))
     if id_usuario is None:
@@ -80,7 +80,7 @@ def listar_usuarios(conexion: Redis) -> List[Dict[str, Any]]:
     ids = sorted(conexion.keys("*"))
     resultado = []
     for id_usuario in ids:
-        datos = leer_usuario_json(conexion, id_usuario.replace(PREFIJO_USUARIO, ""))
+        datos = leer_usuario_json(conexion, id_usuario.replace(PrefijoUsuario, ""))
         if datos:
             resultado.append(datos)
     return resultado
