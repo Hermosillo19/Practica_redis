@@ -43,7 +43,7 @@ def menu() -> None:
                 try: 
                     datos = prompt_json("JSON usuario: ") 
                 except Exception as e: 
-                print(f"JSON inválido: {e}") 
+                    print(f"JSON inválido: {e}") 
                 continue 
                 creado = crear_usuario_json(conexion, datos) 
                 imprimir({"creado": bool(creado)}) 
