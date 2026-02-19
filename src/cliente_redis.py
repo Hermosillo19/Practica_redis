@@ -8,13 +8,13 @@ load_dotenv()
 class ConfiguracionRedis:
     url:str
 
-def ObtenerConfiguracion() -> ConfiguracionRedis:
+def obtener_configuracion() -> ConfiguracionRedis:
 
     url = os.getenv("REDIS_URL", "redis://localhost:6379/0")
     return ConfiguracionRedis(url=url)
 
-def ObtenerConexion() -> Redis :
-    config = ObtenerConfiguracion()
+def obtener_conexion() -> Redis :
+    config = obtener_configuracion()
     conexion = Redis.from_url(config.url , decode_responses=True)
     conexion.ping()
     return conexion

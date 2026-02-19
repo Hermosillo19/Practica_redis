@@ -1,5 +1,5 @@
 import pytest 
-from src.cliente_redis import ObtenerConexion 
+from src.cliente_redis import obtener_conexion 
 from src.modelo_usuario import ( 
     crear_usuario_json, 
     leer_usuario_json, 
@@ -10,7 +10,7 @@ from src.modelo_usuario import (
 
 @pytest.fixture(scope='function')
 def conexion():
-    r = ObtenerConexion
+    r = obtener_conexion
     return r
 
 def test_crear_usuario(conexion): 
@@ -40,4 +40,3 @@ def test_listar_usuarios(conexion):
     crear_usuario_json(conexion, '{"id_usuario":"u006","nombre":"B"}') 
     usuarios = listar_usuarios(conexion) 
     assert len(usuarios) == 5 
-    
