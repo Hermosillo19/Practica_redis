@@ -10,7 +10,7 @@ from src.modelo_usuario import (
 
 @pytest.fixture(scope='function')
 def conexion():
-    r = obtener_conexion
+    r = obtener_conexion()
     return r
 
 def test_crear_usuario(conexion): 
