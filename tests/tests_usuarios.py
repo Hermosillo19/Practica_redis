@@ -40,3 +40,4 @@ def test_listar_usuarios(conexion):
     crear_usuario_json(conexion, '{"id_usuario":"u006","nombre":"B"}') 
     usuarios = listar_usuarios(conexion) 
     assert len(usuarios) == 5 
+
