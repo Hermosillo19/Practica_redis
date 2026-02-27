@@ -60,7 +60,7 @@ jobs:
       env: 
         PYTHONPATH: ${{ github.workspace }} 
         REDIS_URL: ${{ secrets.REDIS_URL }} 
-       # REDIS_URL : redis://default:fjTGc9qd081Pei8QaFCDEhuyhxJwzsBD@redis16216.crce214.us-east-1-3.ec2.cloud.redislabs.com:16216/0 
+       # REDIS_URL : redis://default:FYAwi84kvj2qin4F7R6TrCil4edcpqBW@redis-15327.c10.us-east-1-3.ec2.cloud.redislabs.com:15327
        # REDIS_URL: redis://localhost:6379/0 
       run: | 
         pytest -v 
